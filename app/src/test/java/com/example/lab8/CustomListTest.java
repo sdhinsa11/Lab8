@@ -19,12 +19,7 @@ public class CustomListTest {
      */
     public CustomList MockCityList(){
         list = new CustomList(null, new ArrayList<>());
-        list.add(mockCity());
         return list;
-    }
-
-    private City mockCity(){
-        return new City("Edmonton", "Alberta");
     }
 
     /**
@@ -48,11 +43,15 @@ public class CustomListTest {
     @Test
     void testHasCity() {
         list = MockCityList();
-        assertEquals(true,list.hasCity(mockCity()), "City should be in the list");
-        City newcity = new City("Vancouver", "BC");
 
-        assertEquals(false, list.hasCity(newcity), "City should not be in the list.");
+        // Use the same City object for both adding and checking
+        City edmonton = new City("Edmonton", "Alberta");
+        list.addCity(edmonton);
 
+        assertEquals(true, list.hasCity(edmonton), "City should be in the list");
+
+        City newCity = new City("Vancouver", "BC");
+        assertEquals(false, list.hasCity(newCity), "City should not be in the list.");
     }
 
 //    /**
