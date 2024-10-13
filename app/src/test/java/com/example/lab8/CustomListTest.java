@@ -78,7 +78,7 @@ public class CustomListTest {
      * add a city
      * test that city
      */
-
+    @Test
     void testCountCities() {
         list  = MockCityList();
         assertEquals(1, list.countCities(), "Initially, there should be 1 city in the list.");
