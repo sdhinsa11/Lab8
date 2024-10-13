@@ -73,13 +73,18 @@ public class CustomListTest {
         assertEquals(0, list.getCount(), "There should be 0 cities in the list after deletion."); // Check list size after deletion
     }
 
-//
-//    void testCountCities() {
-//        list  = MockCityList();
-//        assertEquals(1, list.countCities(), "Initially, there should be 1 city in the list.");
-//
-//        City city = new City("Victoria", "British Columbia");
-//        list.add(city);
-//        assertEquals(2, list.countCities(), "There should be 2 cities in the list after adding one.");
-//    }
+    /**
+     * test if there is a city in already
+     * add a city
+     * test that city
+     */
+
+    void testCountCities() {
+        list  = MockCityList();
+        assertEquals(1, list.countCities(), "Initially, there should be 1 city in the list.");
+
+        City city = new City("Victoria", "British Columbia");
+        list.addCity(city);
+        assertEquals(2, list.countCities(), "There should be 2 cities in the list after adding one.");
+    }
 }
