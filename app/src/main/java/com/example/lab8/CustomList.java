@@ -83,12 +83,12 @@ public class CustomList extends ArrayAdapter<City> {
      */
 
     public void delete(City city) throws Exception{
-//        if (hasCity(city)){
-//            cities.remove(city);
-//        }
-//        else{
-//            throw new Exception("City not found in the list.");
-//        }
+        if (hasCity(city)){
+            cities.remove(city);
+        }
+        else{
+            throw new Exception("City not found in the list.");
+        }
     }
 
     /**

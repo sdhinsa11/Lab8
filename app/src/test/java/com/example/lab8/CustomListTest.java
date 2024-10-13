@@ -62,13 +62,17 @@ public class CustomListTest {
     @Test
     void testDeleteCity() throws Exception {
         list = MockCityList();
-        City edmonton = new City("Edmonton", "Alberta");
 
-        assertEquals(1, list.countCities(), "There should be 1 city in the list.");
+        // Add the city first before attempting to delete
+        City edmonton = new City("Edmonton", "Alberta");
+        list.addCity(edmonton); // Add the city to the list
+
+        assertEquals(1, list.getCount(), "There should be 1 city in the list."); // Check list size
 
         list.delete(edmonton); // Delete the city
-        assertEquals(0, list.countCities(), "There should be 0 cities in the list after deletion.");
+        assertEquals(0, list.getCount(), "There should be 0 cities in the list after deletion."); // Check list size after deletion
     }
+
 //
 //    void testCountCities() {
 //        list  = MockCityList();
