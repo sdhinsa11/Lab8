@@ -43,7 +43,6 @@ public class CustomListTest {
     @Test
     void testHasCity() {
         list = MockCityList();
-
         // Use the same City object for both adding and checking
         City edmonton = new City("Edmonton", "Alberta");
         list.addCity(edmonton);
@@ -54,21 +53,22 @@ public class CustomListTest {
         assertEquals(false, list.hasCity(newCity), "City should not be in the list.");
     }
 
-//    /**
-//     * grab city name to delete
-//     * remove the city from the list
-//     * check if there is a city to delete
-//     * Then delete city and see if count decreased
-//     */
-//    @Test
-//    void testDeleteCity() throws Exception {
-//        list = MockCityList();
-//        City cityToDelete = mockCity(); // The city to delete
-//        assertEquals(1, list.countCities(), "There should be 1 city in the list.");
-//
-//        list.delete(cityToDelete); // Delete the city
-//        assertEquals(0, list.countCities(), "There should be 0 cities in the list after deletion.");
-//    }
+    /**
+     * grab city name to delete
+     * remove the city from the list
+     * check if there is a city to delete
+     * Then delete city and see if count decreased
+     */
+    @Test
+    void testDeleteCity() throws Exception {
+        list = MockCityList();
+        City edmonton = new City("Edmonton", "Alberta");
+
+        assertEquals(1, list.countCities(), "There should be 1 city in the list.");
+
+        list.delete(edmonton); // Delete the city
+        assertEquals(0, list.countCities(), "There should be 0 cities in the list after deletion.");
+    }
 //
 //    void testCountCities() {
 //        list  = MockCityList();
