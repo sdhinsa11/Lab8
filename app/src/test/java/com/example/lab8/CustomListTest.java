@@ -19,7 +19,12 @@ public class CustomListTest {
      */
     public CustomList MockCityList(){
         list = new CustomList(null, new ArrayList<>());
+        list.add(mockCity());
         return list;
+    }
+
+    private City mockCity(){
+        return new City("Edmonton", "Alberta");
     }
 
     /**
@@ -34,4 +39,44 @@ public class CustomListTest {
         list.addCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(),listSize + 1);
     }
+
+    /**
+     * add city/province to the list
+     * check if the list added that city
+     * check if another city we did not add is in the list
+     */
+    @Test
+    void testHasCity() {
+        list = MockCityList();
+        assertEquals(true,list.hasCity(mockCity()), "City should be in the list");
+        City newcity = new City("Vancouver", "BC");
+
+        assertEquals(false, list.hasCity(newcity), "City should not be in the list.");
+
+    }
+
+//    /**
+//     * grab city name to delete
+//     * remove the city from the list
+//     * check if there is a city to delete
+//     * Then delete city and see if count decreased
+//     */
+//    @Test
+//    void testDeleteCity() throws Exception {
+//        list = MockCityList();
+//        City cityToDelete = mockCity(); // The city to delete
+//        assertEquals(1, list.countCities(), "There should be 1 city in the list.");
+//
+//        list.delete(cityToDelete); // Delete the city
+//        assertEquals(0, list.countCities(), "There should be 0 cities in the list after deletion.");
+//    }
+//
+//    void testCountCities() {
+//        list  = MockCityList();
+//        assertEquals(1, list.countCities(), "Initially, there should be 1 city in the list.");
+//
+//        City city = new City("Victoria", "British Columbia");
+//        list.add(city);
+//        assertEquals(2, list.countCities(), "There should be 2 cities in the list after adding one.");
+//    }
 }

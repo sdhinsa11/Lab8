@@ -45,13 +45,13 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
-    /**
-     * this gets size of the list *
-     * @return
-     */
-    public int getCount(){
-        return cities.size();
-    }
+//    /**
+//     * this gets size of the list *
+//     * @return
+//     */
+//    public int getCount(){
+//        return cities.size();
+//    }
     /**
      * this adds a city object to the list *the second phase,
      * you can add the city *
@@ -61,6 +61,49 @@ public class CustomList extends ArrayAdapter<City> {
     {
         cities.add(city);
     }
+
+    /**
+     * This checks if a city is in the list
+     * @param city
+     *    This is a city to check if in list
+     * @return
+     *      Returns a Boolean if city is or not in list
+     */
+
+    public int hasCity(City city){
+//        return cities.contains(city);
+        return 0;
+    }
+
+    /**
+     * This deletes a city is in the list if it is there
+     * @param city
+     *    This is a city to check if in list
+     * @throws Exception
+     *     If city is not in the list
+     */
+
+    public void delete(City city) throws Exception{
+//        if (hasCity(city)){
+//            cities.remove(city);
+//        }
+//        else{
+//            throw new Exception("City not found in the list.");
+//        }
+    }
+
+    /**
+     * This checks how many cities are in the list
+     * @return
+     *      Returns the amount of cities in the list
+     */
+
+    public int countCities(){
+//        return cities.size();
+        return 0;
+    }
+
+
 
 
 
